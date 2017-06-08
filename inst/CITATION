@@ -1,0 +1,22 @@
+citHeader("To cite forestviews in publications use:")
+
+citEntry(entry = "Article",
+         title        = "A network flow approach to visualising the roles of covariates in random forests",
+         author       = personList(as.person("Benjamin R Fitzpatrick"),
+             as.person("Kerrie Mengersen")),
+         journal      = "arXiv",
+         year         = "2017",
+         volume       = "",
+         number       = "",
+         pages        = "",
+         url          = "https://arxiv.org/abs/xxxx.xxxxx",
+
+         textVersion  =
+             paste("Benjamin R Fitzpatrick, Kerrie Mengersen (2017).",
+                   "A network flow approach to visualising the roles of covariates in random forests.",
+                   "arXiv",
+                   "URL https://arxiv.org/abs/xxxx.xxxxx")
+         )
+
+
+

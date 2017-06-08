@@ -1,0 +1,26 @@
+Package: forestviews
+Title: Visualise the paths through random forests
+Version: 0.0.0.9000
+Authors@R: person("Benjamin R", "Fitzpatrick", email = "ben.r.fitzpatrick@gmail.com", role = c("aut", "cre"))
+Description: Creates visualisations of all paths through the binary trees that constitute a random forest.  Currently two types of visualisations are produced: parallel coordinates plots and Sankey diagrams. To create these visualisations supply the output of \code{\link[randomForest]{randomForest}} to \code{\link{rf_pathfinder}} then supply the output of \code{\link{rf_pathfinder}} to either \code{\link{rf_parcoor}} to produce a parallel coordinates style plot or \code{\link{rf_sankey}} to produce the network for a Sankey diagram.  To display the Sankey diagram you need to supply the output of \code{\link{rf_sankey}} to the \code{\link[networkD3]{sankeyNetwork}} function from the \code{\link[networkD3]{networkD3}} package.  The examples on the help page for \code{\link{rf_sankey}} demonstate this process. A preprint of the manuscript that introduces the visualisation methods implemented in this package may be obtained from arXiv at <https://arxiv.org/abs/xxxx.xxxxx>. To cite \code{forestviews} in publications please use the citation for the associated article returned by \code{citation('forestviews')}.
+Depends: R (>= 3.3.3)
+Imports:
+    forcats,
+    igraph,
+    mlbench,
+    networkD3,
+    randomForest,
+    tidyverse,
+    viridis,
+    magrittr
+Suggests:
+    caret,
+    doMC,        
+    e1071,
+    knitr,
+    rmarkdown
+License: GPL-3 | a copy of this license is provided in docs/LICENSE
+Encoding: UTF-8
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.0.1
