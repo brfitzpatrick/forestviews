@@ -3,6 +3,15 @@
 
 Sankey diagrams and parallel coordinates plots of all paths from root to leaf nodes through the binary trees that constitute a random forest.
 
+### Installation:
+
+Install the `devtools' package and use it to install `forestviews':
+```r
+install.packages('devtools')
+library('devtools')
+install_github(repo = 'brfitzpatrick/forestviews')
+```
+
 ### Example Usage:
 
 Load the data and packages we will use:
