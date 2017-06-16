@@ -5,7 +5,7 @@ Sankey diagrams and parallel coordinates plots of all paths from root to leaf no
 
 ### Installation:
 
-Install the `devtools' package and use it to install `forestviews':
+Install the `devtools` package and use it to install `forestviews`:
 ```r
 install.packages('devtools')
 library('devtools')
