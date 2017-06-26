@@ -14,7 +14,7 @@ rf_sankey(all.paths.out, all.nodes = FALSE, plot.node.lim = 6)
 \item{plot.node.lim}{this number specifies the maximum rank of nodes to plot. The plot will always start with the root nodes of trees on the far left and proceed to the right with nodes of successively larger ranks until nodes of this rank are reached. This argument only has an effect is \code{all.nodes = FALSE}.}
 }
 \description{
-To produce a Sankey diagram of the paths through a random forest \code{rf_sankey} accepts the output of \code{\link{rf_pathfinder}} and inturn outputs the \code{d3network} object necessary to produce a Sankey diagram with \code{\link[networkD3]{sankeyNetwork}}. Examples of how to produce a Sankey diagram are given in the Examples section. The Sankey diagram will display in a web browser and may be interacted with via the mouse.
+To produce a Sankey diagram of the paths through a random forest \code{rf_sankey} accepts the output of \code{\link{rf_pathfinder}} and inturn outputs the \code{d3network} object necessary to produce a Sankey diagram with \code{\link[networkD3]{sankeyNetwork}}. Examples of how to produce a Sankey diagram are given in the Examples section. The Sankey diagram will display in a web browser and may be interacted with via the mouse. See \url{https://arxiv.org/abs/xxxx.xxxxx} for an explanation of how to interpret these diagrams.
 }
 \examples{
 # example 1:
