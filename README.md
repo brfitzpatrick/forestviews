@@ -57,3 +57,7 @@ Grey scale version:
 rf.pc.grey <- rf_parcoor(all.paths.out = rf.1.all.paths, plot = TRUE, all.nodes = TRUE, plot.title = '', grey.scale = TRUE)
 rf.pc.grey
 ```
+
+### Project Website
+
+See the (project website)[http://brfitzpatrick.github.io/forestviews] for an example of an interactive Sankey diagram.
