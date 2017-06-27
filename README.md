@@ -60,4 +60,4 @@ rf.pc.grey
 
 ### Project Website
 
-See the (project website)[http://brfitzpatrick.github.io/forestviews] for an example of an interactive Sankey diagram.
+See the [project website](http://brfitzpatrick.github.io/forestviews) for an example of an interactive Sankey diagram.
