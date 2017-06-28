@@ -9,13 +9,13 @@ citEntry(entry = "Article",
          volume       = "",
          number       = "",
          pages        = "",
-         url          = "https://arxiv.org/abs/xxxx.xxxxx",
+         url          = "https://arxiv.org/abs/1706.08702",
 
          textVersion  =
              paste("Benjamin R Fitzpatrick, Kerrie Mengersen (2017).",
                    "A network flow approach to visualising the roles of covariates in random forests.",
                    "arXiv",
-                   "URL https://arxiv.org/abs/xxxx.xxxxx")
+                   "URL https://arxiv.org/abs/1706.08702")
          )
 
 

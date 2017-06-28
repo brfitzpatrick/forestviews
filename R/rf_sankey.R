@@ -1,6 +1,6 @@
 #' Sankey Diagram of paths through a random forest
 #'
-#' To produce a Sankey diagram of the paths through a random forest \code{rf_sankey} accepts the output of \code{\link{rf_pathfinder}} and inturn outputs the \code{d3network} object necessary to produce a Sankey diagram with \code{\link[networkD3]{sankeyNetwork}}. Examples of how to produce a Sankey diagram are given in the Examples section. The Sankey diagram will display in a web browser and may be interacted with via the mouse. See \url{https://arxiv.org/abs/xxxx.xxxxx} for an explanation of how to interpret these diagrams.
+#' To produce a Sankey diagram of the paths through a random forest \code{rf_sankey} accepts the output of \code{\link{rf_pathfinder}} and inturn outputs the \code{d3network} object necessary to produce a Sankey diagram with \code{\link[networkD3]{sankeyNetwork}}. Examples of how to produce a Sankey diagram are given in the Examples section. The Sankey diagram will display in a web browser and may be interacted with via the mouse. An explanation of how to interpret these diagrams is presented in our manuscript introducing these visualisations. A preprint of this manuscript is available from arXiv at \url{https://arxiv.org/abs/1706.08702}.
 #' 
 #' @param all.paths.out the output of \code{\link{rf_pathfinder}}
 #' @param all.nodes If \code{TRUE} the network contains all nodes on all paths through the random forest. If \code{FALSE} the network contains the first \code{plot.node.lim} nodes of all paths through the network

@@ -1,6 +1,7 @@
 #' Parallel coordinates plots of the paths through a random forest
 #'
-#' \code{rf_parcoor} produces parallel coordinates plots of the paths through a random forest. See \url{https://arxiv.org/abs/xxxx.xxxxx} for an explanation of how to interpret these plots.
+#' \code{rf_parcoor} produces parallel coordinates plots of the paths through a random forest. These visualisations are introduced and explained in our manuscript, a preprint of which is available from arXiv at \url{https://arxiv.org/abs/1706.08702}.
+#' 
 #' @param all.paths.out the result of supplying a random forest to \code{\link{rf_pathfiner}}.
 #' @param plot if \code{TRUE} a \code{\link[ggplot2]{ggplot2}} plot object is returned that is the parallel coordinates plot. If \code{FALSE} the dataframe is returned from which a parallel coordinates plot can be produced with \code{ggplot2} (see examples below).
 #' @param all.nodes If \code{TRUE} the parallel coordinates plot depicts all nodes on all paths through the random forest. If \code{FALSE} the parallel coordinates plot depicts the first \code{plot.x.nodes} nodes along all paths through the random forest.

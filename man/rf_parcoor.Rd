@@ -26,7 +26,7 @@ rf_parcoor(all.paths.out, plot = TRUE, all.nodes = TRUE, plot.title = "",
 \item{grey.scale}{If \code{TRUE} a grey scale is used in place of a colour scale to represent the path selection frequencies. If \code{FALSE} a colour scale is used to represent the path selection frequencies.}
 }
 \description{
-\code{rf_parcoor} produces parallel coordinates plots of the paths through a random forest. See \url{https://arxiv.org/abs/xxxx.xxxxx} for an explanation of how to interpret these plots.
+\code{rf_parcoor} produces parallel coordinates plots of the paths through a random forest. These visualisations are introduced and explained in our manuscript, a preprint of which is available from arXiv at \url{https://arxiv.org/abs/1706.08702}.
 }
 \examples{
 # example 1:
