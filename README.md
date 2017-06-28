@@ -64,4 +64,5 @@ See the [project website](http://brfitzpatrick.github.io/forestviews) for an exa
 
 ### Reference
 
-The visualisation techniques implemented in `forestviews` are introduced in our manuscript on this topic a pre-print of which is available from [arXiv](https://arxiv.org/abs/1706.08702).
+The visualisation techniques implemented in `forestviews` are introduced in our manuscript on this topic.
+A pre-print of this manuscript is available from [arXiv](https://arxiv.org/abs/1706.08702).
