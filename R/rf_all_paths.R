@@ -15,9 +15,11 @@ rf_all_paths <- function(rf, report.progress = TRUE){
       }
       print('combining dataframes')
     } else{  
-        for(i in 1:n.trees){
-          paths.ls[[i]] <- rf_to_igraph(rf = rf, tree = i, plot.network = FALSE) 
-        }
+       # for(i in 1:n.trees){
+       #   paths.ls[[i]] <- rf_to_igraph(rf = rf, tree = i, plot.network = FALSE) 
+       # }
+      forestsize <- 1:n.trees
+      paths.ls <- lapply(forestsize, function(temp){tree_paths(rf = rf, tree = temp, plot.network = FALSE)})
     }
     paths <- Reduce(f = dplyr::bind_rows, x = paths.ls)
     paths[is.na(paths)] <- 'Terminus'
