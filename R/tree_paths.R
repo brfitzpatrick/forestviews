@@ -5,6 +5,7 @@
 #' @param rf an object of class \code{randomForest} returned by \code{\link[randomForest]{randomForest}}
 #' @param tree a number indexing the tree constituent to \code{rf} which will be extracted and converted to an \code{igraph} network
 #' @param plot.network if \code{TRUE} the network is plotted. If \code{FALSE} the network is not plotted
+#' @param nodeeval number of nodes to be evaluated in the tree if nodelevel FALSE evaluated on each path
 #' @param plot.vert.size a number setting the size of the circles which represent the nodes in the plot of the network
 #' @param label.vert.with.name if \code{TRUE} each vertex (node) is labeled with the covariate that defined the binary partition represented by that vertex. If \code{FALSE} each vertex is labeled with the name assigned to it by \code{igraph}
 #' @param circular.layout if \code{TRUE} the network is plotted with the circular layout from the igraph package. If \code{FALSE} the network is plotted with the default layout from the \code{igraph} package
@@ -12,13 +13,14 @@
 #' @param edge.arrow.size a number controlling the size of arrows that represent the graph edges in the plot
 #' @seealso \code{\link{rf_all_paths}}
 #' @export
-tree_paths <- function(rf, tree, plot.network = FALSE, plot.vert.size = 0, label.vert.with.name = TRUE, circular.layout = TRUE, vertex.label.size = 0.75, arrow.size = 0.25){
+tree_paths <- function(rf, tree, nodeeval, plot.network = FALSE, plot.vert.size = 0, label.vert.with.name = TRUE, circular.layout = TRUE, vertex.label.size = 0.75, arrow.size = 0.25){
   rf.tree <- randomForest::getTree(rfobj = rf, k = tree, labelVar = TRUE)
   rf.tree <- data.frame(Node = 1:nrow(rf.tree), rf.tree)
   n.row <- 2*nrow(rf.tree)
   rel <- data.frame(from.node.id = numeric(length = n.row),
                     to.node.id = numeric(length = n.row))
   counter <- 1
+  if(nodeeval==FALSE){
   for(j in 1:nrow(rf.tree)){
     if(!is.na(rf.tree[j, 'split.var'])){
       rel[counter, 'from.node.id'] <- rf.tree[j, 'Node']
@@ -28,6 +30,21 @@ tree_paths <- function(rf, tree, plot.network = FALSE, plot.vert.size = 0, label
       rel[counter, 'to.node.id'] <- rf.tree[rf.tree[j, 'right.daughter'], 'Node']
       counter <- counter + 1
     }
+  }
+  }else{
+  for(j in 1:nodeeval){
+      if(!is.na(rf.tree[j, 'split.var'])){
+        rel[counter, 'from.node.id'] <- rf.tree[j, 'Node']
+        rel[counter, 'to.node.id'] <- rf.tree[rf.tree[j, 'left.daughter'], 'Node']
+        counter <- counter + 1
+        rel[counter, 'from.node.id'] <- rf.tree[j, 'Node']
+        rel[counter, 'to.node.id'] <- rf.tree[rf.tree[j, 'right.daughter'], 'Node']
+        counter <- counter + 1
+      }
+    }  
+    
+    
+    
   }  
   rel <- rel[!(rel$from.node.id  == 0 & rel$to.node.id == 0),]
   rel.ig <- igraph::graph_from_data_frame(d = rel)

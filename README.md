@@ -29,7 +29,7 @@ rf.1 <- randomForest(classes ~ ., data = Satellite, mtry = 8, keep.forest = TRUE
 
 Calculate all paths through the random forest:
 ```r
-rf.1.all.paths <- rf_pathfinder(rf = rf.1)
+rf.1.all.paths <- rf_pathfinder(rf = rf.1, report.progress = FALSE, nodeeval=5)
 ```
 
 #### Sankey Diagram:
