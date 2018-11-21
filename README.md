@@ -12,8 +12,7 @@ library('devtools')
 install_github(repo = 'brfitzpatrick/forestviews')
 ```
 
-Minor editions have been done to original package to speedup the calculation. Edited
-version is
+Minor editions have been done to the original package to speedup the calculations. Edited version is
 
 ```r
 install.packages('devtools')
