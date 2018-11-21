@@ -12,6 +12,16 @@ library('devtools')
 install_github(repo = 'brfitzpatrick/forestviews')
 ```
 
+Minor editions have been done to original package to speedup the calculation. Edited
+version is
+
+```r
+install.packages('devtools')
+library('devtools')
+install_github(repo = 'thiyangt/forestviews')
+```
+
+
 ### Example Usage:
 
 Load the data and packages we will use:
