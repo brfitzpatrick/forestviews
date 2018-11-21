@@ -11,7 +11,7 @@ rf_all_paths <- function(rf, report.progress = TRUE, nodeeval){
     paths.ls <- vector(mode = 'list', length = n.trees)
     if(report.progress == TRUE){
       for(i in 1:n.trees){
-        paths.ls[[i]] <- tree_paths(rf = rf, tree = i, plot.network = FALSE)
+        paths.ls[[i]] <- tree_paths(rf = rf, tree = i, plot.network = FALSE,nodeeval=nodeeval)
         print(paste(round(100*i/n.trees, digits = 4), '% of forest explored'))
       }
       print('combining dataframes')
@@ -20,7 +20,7 @@ rf_all_paths <- function(rf, report.progress = TRUE, nodeeval){
        #   paths.ls[[i]] <- rf_to_igraph(rf = rf, tree = i, plot.network = FALSE) 
        # }
       forestsize <- 1:n.trees
-      paths.ls <- lapply(forestsize, function(temp){tree_paths(rf = rf, tree = temp, plot.network = FALSE, nodeeval)})
+      paths.ls <- lapply(forestsize, function(temp){tree_paths(rf = rf, tree = temp, plot.network = FALSE, nodeeval=nodeeval)})
     }
     paths <- Reduce(f = dplyr::bind_rows, x = paths.ls)
     paths[is.na(paths)] <- 'Terminus'
