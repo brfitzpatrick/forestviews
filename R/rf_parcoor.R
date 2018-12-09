@@ -69,8 +69,8 @@ rf_parcoor <- function(all.paths.out, plot = TRUE, all.nodes = TRUE, plot.title 
   XtoNode <- function(input){
     return(gsub(pattern = 'X', replacement = 'Node.', x = input))
   }
-  Plot.tb$First.Node.F <- forcats::fct_relabel(f = Plot.tb$First.Axis.Number.F, fun = XtoNode)
-  Plot.tb$Second.Node.F <- forcats::fct_relabel(f = Plot.tb$Second.Axis.Number.F, fun = XtoNode)
+  Plot.tb$First.Node.F <- forcats::fct_relabel(.f = Plot.tb$First.Axis.Number.F, .fun = XtoNode)
+  Plot.tb$Second.Node.F <- forcats::fct_relabel(.f = Plot.tb$Second.Axis.Number.F, .fun = XtoNode)
   h.grad.order <- paste('Node', 1:max.h.grad, sep = '.')  
   if(plot == TRUE){   
     if(colour.scale.log == TRUE){
