@@ -62,16 +62,16 @@ rf_sankey <- function(all.paths.out, all.nodes = FALSE, plot.node.lim = 6){
   All.tb <- dplyr::left_join(x = First.all.tb, y = Second.all.tb, by = c('Seg.ID', 'Count'))
   if(all.nodes == TRUE){
     All.tb %>%
-      dplyr::mutate(First.Axis.Number.N  = forcats::fct_relabel(f = First.Axis.Number.F, fun = x2n),
-                    Second.Axis.Number.N = forcats::fct_relabel(f = Second.Axis.Number.F, fun = x2n)) %>%
+      dplyr::mutate(First.Axis.Number.N  = forcats::fct_relabel(.f = First.Axis.Number.F, .fun = x2n),
+                    Second.Axis.Number.N = forcats::fct_relabel(.f = Second.Axis.Number.F, .fun = x2n)) %>%
         dplyr::select(Count, First.Axis.Number.N, Second.Axis.Number.N, First.Node.ID, Second.Node.ID) %>%
           tidyr::unite(col = N1, First.Axis.Number.N, First.Node.ID, remove = FALSE) %>%
           tidyr::unite(col = N2, Second.Axis.Number.N, Second.Node.ID, remove = FALSE) %>%
             dplyr::select(N1, N2, Count, First.Node.ID, Second.Node.ID) -> Edges.T
   } else{
       All.tb %>%
-        dplyr::mutate(First.Axis.Number.N  = forcats::fct_relabel(f = First.Axis.Number.F, fun = x2n),
-                      Second.Axis.Number.N = forcats::fct_relabel(f = Second.Axis.Number.F, fun = x2n)) %>%
+        dplyr::mutate(First.Axis.Number.N  = forcats::fct_relabel(.f = First.Axis.Number.F, .fun = x2n),
+                      Second.Axis.Number.N = forcats::fct_relabel(.f = Second.Axis.Number.F, .fun = x2n)) %>%
           dplyr::select(Count, First.Axis.Number.N, Second.Axis.Number.N, First.Node.ID, Second.Node.ID) %>%
             dplyr::filter(Second.Axis.Number.N %in% paste('Node',1:plot.node.lim,sep='.')) %>%
               tidyr::unite(col = N1, First.Axis.Number.N, First.Node.ID, remove = FALSE) %>%
