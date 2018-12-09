@@ -12,7 +12,8 @@ Imports:
     randomForest,
     tidyverse,
     viridis,
-    magrittr
+    magrittr,
+    foreach
 Suggests:
     caret,
     doMC,        
